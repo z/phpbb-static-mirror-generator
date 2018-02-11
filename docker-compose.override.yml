@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    networks:
+      phpbb_internal:
+  apache:
+    hostname: ${VIRTUAL_HOST}
+    networks:
+      phpbb_internal:
+        aliases:
+         - ${VIRTUAL_HOST}
+  crawler:
+    networks:
+      phpbb_internal:
+
+networks:
+  phpbb_internal:
+
